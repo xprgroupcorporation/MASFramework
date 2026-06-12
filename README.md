@@ -7,13 +7,13 @@
 MAS Framework is a modular Roblox game development framework designed around flexibility, maintainability, and scalability.  
 It aims to provide developers with a clean and organized foundation for building projects ranging from small experiences to large multi-place games.
 
-### Current Status
+# Current Status
 
 * Internal testing in progress (Private Testing)
 * Experimental for production use
 * Documentation and tooling are still being expanded
 
-### Long-Term Roadmap
+# Long-Term Roadmap
 
 The current focus is on refining the framework's architecture, improving developer experience, and validating core systems through testing and real-world usage.
 
