@@ -21,6 +21,7 @@ A public release is planned once **Version 2.0.0** reaches feature-complete stat
 
 Until then, this repository primarily serves as a placeholder until framework research is completed.
 
+# 
 <h3> 
    <p align="center"> 
     XPR Group Corporation™ </b> 
@@ -28,4 +29,4 @@ Until then, this repository primarily serves as a placeholder until framework re
   <p align="center"> 
     <b>Exotic • Passionate • Revolutionize</b> 
   </p>
-</h3>
+</h3>  
