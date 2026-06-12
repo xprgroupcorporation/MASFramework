@@ -1,9 +1,11 @@
 # MAS Framework
 
-> ⚠️ **Early Development & Internal Testing**
-> MAS Framework is currently under active development and internal testing. > Features, APIs, and project structure is not still yet. so proper documentation will be added after proper release.
+> ⚠️ **Early Development & Internal Testing**  
+> MAS Framework is currently under active development and internal testing.  
+> Features, APIs, and project structure is not still yet. so proper documentation will be added after proper release.  
 
-MAS Framework is a modular Roblox game development framework designed around flexibility, maintainability, and scalability. It aims to provide developers with a clean and organized foundation for building projects ranging from small experiences to large multi-place games.
+MAS Framework is a modular Roblox game development framework designed around flexibility, maintainability, and scalability.  
+It aims to provide developers with a clean and organized foundation for building projects ranging from small experiences to large multi-place games.
 
 ### Current Status
 
