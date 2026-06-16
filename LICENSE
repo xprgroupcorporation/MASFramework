@@ -1,5 +1,5 @@
                  XPR COMMUNITY SOURCE LICENSE
-                        Version 1.0, 2026
+                        Version 1.1, 2026
 
  Copyright (c) 2026 XPR Group Corporation
 
@@ -122,35 +122,36 @@ compatible non-commercial community-source license.
   Public distribution of modified versions without source
 availability is not permitted.
 
-  4. Commercial Restrictions.
+4. Commercial Restrictions.
 
   Without explicit written permission from the original
-creator, copyright holder, or authorized contributors of the
-Software, you may NOT:
+creator, copyright holder, or authorized contributors
+of the Software, you may NOT:
 
-    a) Sell the Software
+  a) Sell the Software itself
 
-    b) Sell modified versions of the Software
+  b) Sell standalone copies of the Software
 
-    c) Monetize the Software directly or indirectly
+  c) Sell modified versions of the Software as a
+     competing framework or product
 
-    d) Include the Software in paid products or services
+  d) Rebrand and redistribute the Software while
+     claiming original authorship
 
-    e) Rebrand and commercially redistribute the Software
+  e) Misrepresent ownership, origin, or authorship
+     of the Software
 
-    f) Use the Software within subscription-based systems
+  f) Remove required attribution notices where
+     attribution is required by this License
 
-    g) Claim authorship of the original Software
+  All copyrights, trademarks, branding, and ownership
+rights relating to the Software remain with the
+original creator and copyright holder.
 
-    h) Misrepresent ownership, origin, or authorship
-      of the Software
-
-    i) Profit primarily from work substantially
-      derived from the Software
-
-  All commercial rights are exclusively reserved by the
-original creator, copyright holder, or authorized project
-owners of the Software.
+  Use of the Software within commercial projects,
+games, products, services, commissions, or business
+activities is permitted unless otherwise restricted
+by project-specific terms.
 
 5. Attribution Requirement.
 
@@ -279,22 +280,20 @@ ethical, safety, and security requirements.
   Projects using this License should provide the following
 attribution information below this section:
 
-    Copyright (c) 2026 XPR Studio
-    28/5/2026 [dd/mm/yyyy]
+    Copyright (c) [year] [creator or organization]
+    Edit date [dd/mm/yyyy or mm/dd/yyyy, please mention the format. no confusing.]
 
     Original Creator:
-    AC4 (Founder)
+    [creator name]
 
     Organization/ individual(s?):
-    XPR Studio
-    XPR Group Corporation
+    [organization name, if applicable]
 
     Original Project Name:
-    MAS Framework
-    "Modular Architecture Standard"
+    [project name]
 
     Source Repository or Project Page:
-    https://github.com/xprgroupcorporation/MASFramework
+    [link or reference]
 
 ----------------------------------------------------------------
 
@@ -305,7 +304,67 @@ permissions, or restrictions below this section.
 
 ----------------------------------------------------------------
 
+MAS Framework Additional Terms
+Version 1.0
 
+1. Original Ownership
+
+MAS Framework ("Modular Architecture Standard") is an
+original work of XPR Studio and XPR Group Corporation.
+
+Users may not falsely claim authorship, ownership, or
+creation of the original MAS Framework source code,
+branding, documentation, or official releases.
+
+2. Framework Redistribution
+
+Users may modify the Framework for their own projects.
+
+However, users may not redistribute, publish, market,
+or release the Framework itself as a separate competing
+framework while claiming it as their own original work.
+
+Forks, modifications, and public releases must clearly
+acknowledge that they are derived from MAS Framework.
+
+3. Commercial Usage Exception
+
+Notwithstanding any commercial restrictions contained
+elsewhere in this License, MAS Framework may be used
+within commercial games, products, experiences,
+services, commissions, or business projects.
+
+Developers are permitted to generate revenue from
+projects that use MAS Framework.
+
+Ownership of the Framework itself remains with
+XPR Studio and XPR Group Corporation.
+
+4. Framework Updates
+
+XPR Studio may continue to provide updates, bug fixes,
+security improvements, optimizations, features, tools,
+or additional modules for MAS Framework.
+
+Adoption of future updates is entirely optional.
+
+Users may remain on any version of the Framework and
+are under no obligation to upgrade.
+
+5. Trademark and Branding
+
+This License grants rights to use the Framework but
+does not grant ownership of the MAS Framework name,
+XPR Studio name, XPR Group Corporation name, logos,
+branding, trademarks, or project identity.
+
+6. Attribution
+
+Attribution is appreciated but not required inside
+games or products using MAS Framework.
+
+However, attribution notices contained within source
+files and license documentation may not be removed.
 
 ----------------------------------------------------------------
                      END OF LICENSE
