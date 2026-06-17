@@ -1,0 +1,2 @@
+# Ignore Export_Output to prevent code leaks
+Plugin/Export_Output/
