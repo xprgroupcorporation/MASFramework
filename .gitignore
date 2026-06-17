@@ -1,3 +1,3 @@
-# Ignore all files in Export_Output but keep folder structure
+# Ignore all files inside Export_Output, but keep the folder itself
 Plugin/Export_Output/**
-!Plugin/Export_Output/**/.gitkeep
+!Plugin/Export_Output/.gitkeep
