@@ -23,7 +23,7 @@ Workflow:
             v
     Companion (this script)
         Receives the payload
-        Creates timestamped folder: MAS_Export_DD-MM-YYYY_{PlaceName}/
+        Creates timestamped folder: MAS_Export_{HH-MM-SS}_DD-MM-YYYY_{PlaceName}/
         Writes each .luau file mirroring the Roblox folder structure
         Adds .gitkeep to empty folders
         Writes manifest.json (paths, tags, attributes -- no source blobs)
@@ -91,7 +91,7 @@ class ExportHandler(BaseHTTPRequestHandler):
             return
 
         place_name = data.get("placeName", "Unknown")
-        timestamp  = datetime.now().strftime("%d-%m-%Y")
+        timestamp  = datetime.now().strftime("%H-%M-%S_%d-%m-%Y")
         folder_name = f"MAS_Export_{timestamp}_{place_name}"
         export_path = os.path.join(OUTPUT_DIR, folder_name)
 
