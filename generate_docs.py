@@ -4,6 +4,9 @@ import shutil
 import sys
 from pathlib import Path
 
+"""
+***BROKEN NOW, I WILL FIX LATER***
+"""
 
 MODE = "w"
 
