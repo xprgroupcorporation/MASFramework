@@ -21,6 +21,11 @@ A public release is planned once **Version 2.0.0** reaches feature-complete stat
 
 Until then, this repository primarily serves as a placeholder until framework research is completed.
 
+# Dev Note
+* Make script for tranfer export into documentation (create and update info)
+* Make handbook.
+* make plugin and package release soon.
+
 # 
 <h3> 
    <p align="center"> 

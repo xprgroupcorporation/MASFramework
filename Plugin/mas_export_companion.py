@@ -1,51 +1,113 @@
 """
-MAS Framework Export Companion
-================================
+MAS Framework Export Companion V1.5
+===================================
+
 Companion server for the MAS Framework Super Tool plugin.
-Receives exported framework files from Roblox Studio and writes
-them to disk as a proper .luau folder tree.
- 
-Requirements:
-    Python 3.6+ (no pip installs needed, uses stdlib only)
- 
-Usage:
-    1. Open a terminal in the Plugin/ folder
-    2. Run: python mas_export_companion.py
-    3. Open Roblox Studio with your MAS project
-    4. Click Export in the MAS Framework Super Tool plugin
-    5. Check Export_Output/ for the exported files
- 
-Workflow:
-    Studio Plugin
-        Collects .luau sources from the framework tree
-        Sends JSON payload to localhost:7777/export
-            |
-            v
-    Companion (this script)
-        Receives the payload
-        Creates timestamped folder: MAS_Export_{HH-MM-SS}_DD-MM-YYYY_{PlaceName}/
-        Writes each .luau file mirroring the Roblox folder structure
-        Adds .gitkeep to empty folders
-        Writes manifest.json (paths, tags, attributes -- no source blobs)
-            |
-            v
-    Export_Output/
-        MAS_Export_17-06-2026_MyGame/
-            ReplicatedStorageAssets/Modules/MASFramework/
-            ServerScriptServiceAssets/ServerHandler/Modules/
-            ServerScriptServiceAssets/ServerHandler/Services/
-            StarterGuiAssets/Scripts/ClientHandler/Modules/
-            StarterGuiAssets/Scripts/ClientHandler/Services/
-            Template_Modules/
-            Info_(Read!).luau
-            manifest.json
- 
-Notes:
-    - Keep this running in the background while using the plugin
-    - Each export creates a new timestamped folder, old ones are kept
-    - Press Ctrl+C to stop the server
+
+This utility receives exported framework data directly from Roblox Studio
+and reconstructs it on disk as a clean .luau source tree.
+
+Why this tool exists
+--------------------
+Roblox places are normally shared as .rbxl/.rbxm files, which are
+serialized XML. While perfect for Roblox Studio, this format contains
+large amounts of metadata that are unnecessary for AI code analysis.
+
+For example, a simple ModuleScript like:
+
+    return {
+        Name = "Test"
+    }
+
+is only around 10-20 AI tokens as plain Lua source.
+
+The same module inside a serialized Roblox file becomes something like:
+
+    <Item class="ModuleScript">
+        <Property name="Name">Test</Property>
+        <Property name="Source"><![CDATA[
+        return {
+            Name = "Test"
+        }
+        ]]></Property>
+        ...
+    </Item>
+
+which can easily consume 100-500+ tokens after serialization.
+
+By exporting the framework as a normal folder structure containing
+only .luau files, folders, metadata, and assets, AI models spend their
+context window on your code instead of Roblox's XML.
+
+Benefits
+--------
+• Typically reduces AI token usage by approximately 5x-20x compared to
+  serialized Roblox files.
+• Produces a clean project structure that AI models understand more
+  naturally.
+• Easier to inspect, search, version with Git, and share with others.
+• Ideal for feeding large Roblox frameworks into ChatGPT, Claude,
+  Gemini, and other coding assistants.
+• Especially useful for users without access to large-context or
+  premium AI coding tools, allowing much more efficient use of limited
+  context windows.
+
+The exported project can simply be compressed into a ZIP archive and
+uploaded directly to an AI assistant for framework analysis, debugging,
+refactoring, documentation, or code generation.
+
+Requirements
+------------
+Python 3.6+
+(No external packages required.)
+
+Usage
+-----
+1. Open a terminal inside the Plugin/ folder.
+2. Run:
+
+       python mas_export_companion.py
+
+3. Open Roblox Studio with your MAS project.
+4. Click Export in the MAS Framework Super Tool plugin.
+5. The exported project will appear inside Export_Output/.
+
+Workflow
+--------
+Roblox Studio Plugin
+    Collects all framework source files and metadata.
+            │
+            ▼
+    Sends JSON to localhost:7777/export
+            │
+            ▼
+MAS Export Companion
+    Receives the payload.
+    Creates a timestamped export folder.
+    Writes the complete .luau source tree.
+    Generates .gitkeep files for empty folders.
+    Writes manifest.json containing paths, tags, and attributes
+    (without duplicating source code).
+            │
+            ▼
+Export_Output/
+    MAS_Export_{HH-MM-SS}_DD-MM-YYYY_{PlaceName}/
+        ReplicatedStorageAssets/
+        ServerScriptServiceAssets/
+        StarterGuiAssets/
+        Template_Modules/
+        Info_(Read!).luau
+        manifest.json
+
+Notes
+-----
+• Keep this server running while using the export feature.
+• Every export creates a new timestamped folder.
+• Previous exports are never overwritten.
+• Press Ctrl+C to stop the server.
 """
 
+from email import errors
 import json
 import os
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -99,9 +161,13 @@ class ExportHandler(BaseHTTPRequestHandler):
         errors  = []
 
         # Create all folders first (including empty ones)
-        for folder_rel in data.get("emptyFolders", []):
+        for folder_entry in data.get("emptyFolders", []):
+            if isinstance(folder_entry, dict):
+                folder_rel = folder_entry.get("path", "")
+            else:
+                folder_rel = folder_entry
             folder_rel = folder_rel.replace("\\", "/").lstrip("/")
-            if ".." in folder_rel:
+            if ".." in folder_rel or not folder_rel:
                 continue
             try:
                 os.makedirs(os.path.join(export_path, folder_rel), exist_ok=True)
@@ -190,7 +256,7 @@ if __name__ == "__main__":
     server = HTTPServer(("localhost", PORT), ExportHandler)
     print(f"MAS Export Companion running on localhost:{PORT}")
     print(f"Output: {os.path.abspath(OUTPUT_DIR)}")
-    print(f"Format: MAS_Export_DD-MM-YYYY_{{PlaceName}}/")
+    print(f"Format: MAS_Export_HH-MM-SS_DD-MM-YYYY_{{PlaceName}}/")
     print(f"Waiting... (Ctrl+C to stop)\n")
     try:
         server.serve_forever()
