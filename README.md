@@ -20,7 +20,10 @@
 ![Architecture](https://img.shields.io/badge/Architecture-Component--Oriented-7F77DD?style=flat-square&labelColor=26215C)
 ![Multi--Place](https://img.shields.io/badge/Multi--Place-Supported-7F77DD?style=flat-square&labelColor=26215C)
 ![Foundation_Modules](https://img.shields.io/badge/Foundation_Modules%2FServices-Included-534AB7?style=flat-square&labelColor=3C3489)
-![Add--on_Modules](https://img.shields.io/badge/Add--on_Modules%2FServices-Included-534AB7?style=flat-square&labelColor=3C3489)
+![Add--on_Modules](https://img.shields.io/badge/Add--on_Modules%2FServices-Included-534AB7?style=flat-square&labelColor=3C3489)  
+
+[![Downloads](https://img.shields.io/github/downloads/xprgroupcorporation/MASFramework/total?style=flat-square&label=Downloads&labelColor=3C3489&color=534AB7)](https://github.com/xprgroupcorporation/MASFramework/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/xprgroupcorporation/MASFramework?style=flat-square&label=GitHub%20Stars&labelColor=3C3489&color=534AB7)](https://github.com/xprgroupcorporation/MASFramework/stargazers)
 
 </div>
 
