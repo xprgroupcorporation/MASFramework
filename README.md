@@ -104,7 +104,7 @@ MAS
 
 The exact structure can be adapted to the needs of the project while maintaining the principles of MAS.
 
-## 🛠️ MAS Super Tool+
+## 🛠️ MAS Tool Lite
 
 **MAS Super Tool+** is the official Roblox Studio plugin for MAS Framework.
 
