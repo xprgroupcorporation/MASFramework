@@ -15,7 +15,7 @@
 ![Platform](https://img.shields.io/badge/Platform-Roblox-AFA9EC?style=flat-square&labelColor=3C3489)
 ![Status](https://img.shields.io/badge/Status-Production_Ready-AFA9EC?style=flat-square&labelColor=3C3489)
 ![Framework Engine Version](https://img.shields.io/badge/Framework_Engine-v2.0.0-534AB7?style=flat-square&labelColor=3C3489)
-![Plugin Tool Version](https://img.shields.io/badge/Plugin_Tool%2B-v0.8.6-534AB7?style=flat-square&labelColor=3C3489)
+![Plugin Tool Version](https://img.shields.io/badge/Plugin_Tool_Lite-v0.9.0L-534AB7?style=flat-square&labelColor=3C3489)
 
 ![Architecture](https://img.shields.io/badge/Architecture-Component--Oriented-7F77DD?style=flat-square&labelColor=26215C)
 ![Multi--Place](https://img.shields.io/badge/Multi--Place-Supported-7F77DD?style=flat-square&labelColor=26215C)
